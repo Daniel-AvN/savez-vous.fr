@@ -1,0 +1,342 @@
+/* font-family: 'Kdam Thmor Pro', sans-serif; titulo futurista
+font-family: 'Nova Slim', cursive; letra futurista
+font-family: 'Open Sans', sans-serif; texto light, info..
+font-family: 'Roboto', sans-serif; text clasico
+font-family: 'Signika Negative', sans-serif;  text bold, importante, aviso
+font-family: 'Alkatra', cursive; titulo bonito
+*/
+*{
+    box-sizing: border-box;
+}
+/*  Alumno: Leonardo Daniel Aviña Neri 4PRAM */
+
+*{
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+    font-family: 'Nova Slim', cursive;
+    /* border: 2px solid white; */
+}
+
+.h900{
+    height: 1300px;
+}
+
+::first-letter{
+    text-transform: capitalize;
+}
+main{
+    padding: 10px;
+}
+
+body{
+    background-position: center;
+    background: rgb(31,44,64);
+    background: radial-gradient(circle, rgba(31,44,64,1) 30%, rgba(12,12,12,1) 100%);
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    min-height: 100vh; /*sin este no funciona todo esto*/
+    grid-template-rows: auto 1fr auto;
+
+}
+
+.toggle-menu{
+    position: absolute; /*pierde su sitio*/
+    width: 40px;
+    top: 1.5rem;
+    right: 1.5em;
+    cursor: pointer;
+    z-index: 1;
+    width: 30px;
+}
+
+.fa-bars{
+    color: #fff;
+    display: block;
+}
+
+.header__logo{
+    /* filter: invert(0); */
+    width: 70px;
+    height: 70px;
+    /* background-color: #fff; */
+    background-image: url('https://images.vexels.com/content/164028/preview/france-flag-language-icon-circle-a36a3a.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main-menu{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-image: linear-gradient(225deg, #000000 0%, #4b4ca0 50%, #2bc5c1 100%);
+    align-items: center;
+    transform: translateY(-100%);
+
+    transition: transform .3s;
+}
+
+.main-menu--show{
+    transform: translateY(0); /* mostrandose*/
+}
+
+.main-menu__item{ /*los li*/
+    padding: 1em;
+}
+
+.toggle-menu__checkbox{
+    display: none;
+}
+
+.toggle-menu__checkbox:checked + .main-menu{/* al hermano main menu */
+    transform: translateY(0);
+}
+
+.main-menu__link{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.main-menu__link:hover{
+    text-decoration: underline;
+    text-shadow: 0 2px 4px #000;
+}
+.header{
+    width: 100%;
+    height: 75px;
+    background-image:  linear-gradient(225deg, #000000 0%, #4b4ca0 50%, #c52b2b 100%);
+    position: fixed;
+    top: 0;
+}
+@media screen and (min-width: 768px) { /*desk*/
+    .main-menu{
+        flex-direction: row;
+        transform: translateY(0);
+        /* para q el menu no se pierda al pasar a ser de escritorio */
+    }
+    .header{
+        /* poner imagen con logotipo a la izquierda */
+        width: 100%;
+        position: fixed;
+        top: 0;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.428);
+        /* border-bottom: 2px solid #164be8; */
+
+        background-image: linear-gradient(225deg, #000000 0%, #4b4ca0 50%, #2bc5c1 100%);
+    }
+
+    .toggle-menu{
+        display: none;
+    }
+    .header__logo{
+        /* filter: invert(0); */
+        /* background-color: #fff; */
+        background-image: url('https://images.vexels.com/content/164028/preview/france-flag-language-icon-circle-a36a3a.png');
+    }
+}
+
+/* main */
+
+main{
+    margin-top: 100px;
+}
+
+.subtitle, .title{
+    font-family: 'Alkatra', cursive;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+}
+
+.main__title{
+    display: block;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 18ch;
+    text-shadow: 0 0 8px rgb(255, 81, 0);
+    font-family: 'Nova Slim', cursive; 
+    font-size: 3em;
+    animation: typing 2s steps(9), blink .5s, infinite step-end alternate;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+@keyframes typing{
+    from{ width: 0; }
+}
+@keyframes blink{
+    50%{ border-color: transparent; }
+    100%{ border-color: transparent; }
+}
+
+.article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9px;
+
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    padding: 5px 15px;
+    /* height: 140px; */
+    border-radius: 0.5em;
+    background-image: linear-gradient(225deg, #57575da2 0%, #1bab9aad 50%, #01012aa2 100%);
+}
+
+.curses{
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.curse{
+    --curse-color: red;
+    padding: 70px 40px 70px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start; /* Alinea elementos al inicio */
+    border-radius: 1em;
+    border: 3px solid #0101016b;
+    width: 500px;
+    min-height: 900px;
+    margin: 4px;
+    text-align: center;
+    background-color: #0a0a0a84;
+    /* background-image: linear-gradient(160deg, #eee 0%, #1057a834 100%); */
+}
+
+
+a{
+    text-decoration: none;
+}
+.curse__icon{
+    font-size: 1000%;
+    border: 2px solid var(--curse-color);
+    /* margin: auto; */
+    /* margin-top: 10px; */
+    margin-bottom: 4px;
+    padding: 4px;
+    border-radius: .1em;
+    width: 100%;
+    /* height: 212px; */
+
+    background-color: #11111183;
+}
+
+.curse__icon, .curse__title, .curse__languaje{
+    color: var(--curse-color);
+}
+.curse__languaje{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.curse-php{
+    --curse-color: purple ;
+}
+
+.curse-cs{
+    --curse-color: rgb(41, 127, 13);
+}
+
+.curse-c{
+    --curse-color: rgb(112, 144, 161) ;
+}
+
+.curse-cpp, .curse-go, .curse-css{
+    --curse-color: rgb(44, 145, 234) ;
+}
+
+.curse-html{
+    --curse-color: rgb(241, 129, 37) ;
+}
+
+.curse-js, .curse-python {
+    --curse-color: rgb(215, 183, 5) ;
+}
+
+:where(.curse-go, .curse-php, .curse-css, .curse-html, .curse-python) .curse__icon {
+    margin: auto;
+    text-align: center;
+    line-height: 212px !important;
+}
+
+@media screen and (min-width: 768px) { /*a desk*/
+    .section {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 768px) { /*a cel*/
+
+    body{
+        justify-content: center;
+    }
+
+    .main__title{
+        /* margin-left: 100px ; */
+        font-size: 2em;
+        text-align: right;
+    }
+
+    .article{
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section{
+        width: 80%;
+    }
+
+    .curses{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .curse{
+        width: 400px;
+    }
+
+    .w77, .w50{
+        max-width: 400px;
+    }
+
+    
+/*     
+    .h700{
+        min-height: 700px;
+    } */
+
+}
+
+
+.w77{
+    width: 1000px;
+}
+
+.w50{
+    width: 700px;
+}
+
+.h700{
+    height: 700px;
+}
